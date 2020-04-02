@@ -9,4 +9,7 @@ if($db){
      echo 'connected.';
 }
 
-$db->insert();
+// $db->insert();
+
+// $db->update();
+

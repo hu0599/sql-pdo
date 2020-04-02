@@ -1,3 +1,3 @@
-### Mysql PDO
+### Mysql PDO CRUD
 
-simple class connection to Database with important operations.
+simple Class Database to connect to Database with important operations.

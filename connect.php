@@ -41,4 +41,13 @@ class Database
 
         return $this;
     }
+
+    public function update()
+    {
+        $stmt = $this->pdo->prepare("UPDATE $this->table SET name = ? WHERE id = ?");
+        $stmt->execute(['Maxipaxi', 20]); // [$_POST['name'], $_SESSION['id']]
+        $stmt = null;
+
+        return $this;
+    }
 }
