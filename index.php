@@ -27,4 +27,6 @@ if($db){
 
 // $db->fetchKeyValuePair();
 
-$db->search();
+// $db->search();
+
+$db->whereInArray();

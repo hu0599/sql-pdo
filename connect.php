@@ -142,4 +142,18 @@ class Database
 
         return $this;
     }
+
+    public function whereInArray()
+    {
+        $inArray = [23, 24, 26]; // check your db if IDs exist
+        $clause = implode(',', array_fill(0, count($inArray), '?'));
+        $stmt = $this->pdo->prepare("SELECT * FROM $this->table WHERE id IN ($clause)");
+        $stmt->execute($inArray);
+        $resArr = $stmt->fetchAll();
+        if (!$resArr) return false;
+        var_export($resArr);
+        $stmt = null;
+
+        return $this;
+    }
 }
