@@ -7,17 +7,20 @@ class Database
 
     public function __construct()
     {
+        // connect
         $this->pdo = $this->connect();
-        $this->table = 'test';
+        $this->table = 'test'; // craete a Table with the name [test] or change it to whatever ..
     }
 
     private function connect()
     {
         set_exception_handler(function ($e) {
+            // log errors in file
             error_log("# " . $e->getMessage() . "\r\n", 3, __DIR__ . "/errors.log");
             exit('Please try again later! Reason:: adding new features to our website.'); // :)
         });
 
+        // change connection
         $host = 'localhost';
         $dbName = 'db';
         $username = 'admin';

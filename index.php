@@ -9,7 +9,7 @@ if($db){
      echo 'connected.';
 }
 
-// $db->insert();
+$db->insert();
 
 // $db->update();
 
@@ -29,4 +29,4 @@ if($db){
 
 // $db->search();
 
-$db->whereInArray();
+// $db->whereInArray();
