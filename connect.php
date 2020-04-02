@@ -3,12 +3,14 @@
 class Database
 {
     protected $pdo;
+    protected $table;
 
     public function __construct()
     {
         $this->pdo = $this->connect();
+        $this->table = 'test';
     }
-    
+
     private function connect()
     {
         set_exception_handler(function ($e) {
@@ -16,9 +18,11 @@ class Database
             exit('Please try again later! Reason:: adding new features to our website.'); // :)
         });
 
-        $dsn = "mysql:host=localhost;dbname=db;charset=utf8mb4";
+        $host = 'localhost';
+        $dbName = 'db';
         $username = 'admin';
-        $password = 'pass123';
+        $password = 'pass123'; // or empty
+        $dsn = "mysql:host=$host;dbname=$dbName;charset=utf8mb4";
 
         $options = [
             PDO::ATTR_EMULATE_PREPARES   => false,                  // turn off emulation mode
@@ -27,5 +31,14 @@ class Database
         ];
 
         return new PDO($dsn, "$username", "$password", $options);
+    }
+
+    public function insert()
+    {
+        $stmt = $this->pdo->prepare("INSERT INTO $this->table (name, email, password) VALUES (?, ?, ?)");
+        $stmt->execute(['john', 'john@example.com', sha1('secret')]); // [$_POST['name'], ...]
+        $stmt = null;
+
+        return $this;
     }
 }
