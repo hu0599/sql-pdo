@@ -1,6 +1,2 @@
 # Object of class Database could not be converted to string
 # SQLSTATE[HY000] [1045] Access denied for user 'adzggzmin'@'localhost' (using password: YES)
-# SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(name, email, password) VALUES (?, ?, ?)' at line 1
-# SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(name, email, password) VALUES (?, ?, ?)' at line 1
-# SQLSTATE[42000]: Syntax error or access violation: 1103 Incorrect table name ''
-# SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(name, email, password) VALUES (?, ?, ?)' at line 1
