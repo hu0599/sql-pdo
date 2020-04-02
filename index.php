@@ -21,4 +21,6 @@ if($db){
 
 // $db->fetchAll();
 
-$db->selectOneColumn();
+// $db->selectOneColumn();
+
+$db->fetchOneRow();

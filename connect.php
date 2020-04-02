@@ -103,4 +103,18 @@ class Database
 
         return $this;
     }
+
+    public function fetchOneRow()
+    {
+        $stmt = $this->pdo->prepare("SELECT id, name, email FROM $this->table WHERE id = ?");
+        $stmt->execute([50]); // id
+        $arr = $stmt->fetch();
+        if (!$arr) return false;
+        var_export($arr);
+        // or only
+        var_export($arr['email']);
+        $stmt = null;
+
+        return $this;
+    }
 }
