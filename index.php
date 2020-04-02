@@ -19,4 +19,6 @@ if($db){
 
 // $db->lastInsertId();
 
-$db->fetchAll();
+// $db->fetchAll();
+
+$db->selectOneColumn();

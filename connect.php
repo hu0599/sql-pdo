@@ -91,4 +91,16 @@ class Database
 
         return $this;
     }
+
+    public function selectOneColumn()
+    {
+        $stmt = $this->pdo->prepare("SELECT name FROM $this->table WHERE id > ?");
+        $stmt->execute([12]); // id
+        $arr = $stmt->fetchAll(PDO::FETCH_CLASS);
+        if (!$arr) return false;
+        var_export($arr);
+        $stmt = null;
+
+        return $this;
+    }
 }
