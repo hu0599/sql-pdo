@@ -4,6 +4,11 @@ class Database
 {
     private function connect()
     {
+        set_exception_handler(function ($e) {
+            error_log("# " . $e->getMessage() . "\r\n", 3, __DIR__ . "/errors.log");
+            exit('Please try again later! Reason:: adding new features to our website.'); // :)
+        });
+
         $dsn = "mysql:host=localhost;dbname=db;charset=utf8mb4";
         $username = 'admin';
         $password = 'pass123';
