@@ -59,4 +59,24 @@ class Database
 
         return $this;
     }
+
+    public function updateColumn()
+    {
+        $stmt = $this->pdo->prepare("UPDATE $this->table SET name = ? WHERE id = ?");
+        $stmt->execute(['Hans', 23]); // [$_POST['name'], $_SESSION['id']]
+        $stmt->rowCount();
+        $stmt = null;
+
+        return $this;
+    }
+
+    public function lastInsertId()
+    {
+        $stmt = $this->pdo->prepare("INSERT INTO $this->table (name, email, password) VALUES (?, ?, ?)");
+        $stmt->execute(['ro', 'ro@gmail.com', 'password123']); // [$_POST['name'], $_POST['email'], $_POST['password']]
+        $this->pdo->lastInsertId(); // echo
+        $stmt = null;
+
+        return $this;
+    }
 }

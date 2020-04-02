@@ -15,3 +15,6 @@ if($db){
 
 // $db->delete() or if you want $db->insert()->delete();
 
+// $db->updateColumn();
+
+$db->lastInsertId();
