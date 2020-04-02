@@ -23,4 +23,6 @@ if($db){
 
 // $db->selectOneColumn();
 
-$db->fetchOneRow();
+// $db->fetchOneRow();
+
+$db->fetchKeyValuePair();

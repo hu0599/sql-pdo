@@ -117,4 +117,16 @@ class Database
 
         return $this;
     }
+
+    public function fetchKeyValuePair()
+    {
+        $stmt = $this->pdo->prepare("SELECT name, email FROM $this->table WHERE id < ?"); // could be age or ..
+        $stmt->execute([24]); // age (add new column to table test)
+        $arr = $stmt->fetchAll(PDO::FETCH_KEY_PAIR);
+        if (!$arr) return false;
+        var_export($arr);
+        $stmt = null;
+
+        return $this;
+    }
 }

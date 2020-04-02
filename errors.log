@@ -14,3 +14,7 @@
 # Using $this when not in object context
 # Using $this when not in object context
 # Using $this when not in object context
+# SQLSTATE[42S22]: Column not found: 1054 Unknown column 'age' in 'where clause'
+# SQLSTATE[42S22]: Column not found: 1054 Unknown column 'age' in 'where clause'
+# SQLSTATE[42S22]: Column not found: 1054 Unknown column 'age' in 'where clause'
+# SQLSTATE[42S22]: Column not found: 1054 Unknown column 'age' in 'where clause'
