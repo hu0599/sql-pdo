@@ -1,5 +1,13 @@
 ### Mysql PDO CRUD
 
-simple Class Database to connect to Database with important operations.
+Simple Database Class - Connection & important Operations like `INSERT`, `UPDATE` ..
 
-`php -S localhost:8080`
+Create a Table  and add these columns
+* `id` 
+* `name` 
+* `email` 
+* `password `
+
+Change connection Data in `connect.php`
+
+Then run `php -S localhost:8080`
