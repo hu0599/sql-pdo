@@ -50,4 +50,13 @@ class Database
 
         return $this;
     }
+
+    public function delete()
+    {
+        $stmt = $this->pdo->prepare("DELETE FROM $this->table WHERE id = ?");
+        $stmt->execute([25]); // [$_SESSION['id']
+        $stmt = null;
+
+        return $this;
+    }
 }

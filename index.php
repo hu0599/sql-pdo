@@ -13,3 +13,5 @@ if($db){
 
 // $db->update();
 
+// $db->delete() or if you want $db->insert()->delete();
+
