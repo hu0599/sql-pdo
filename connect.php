@@ -2,6 +2,13 @@
 
 class Database
 {
+    protected $pdo;
+
+    public function __construct()
+    {
+        $this->pdo = $this->connect();
+    }
+    
     private function connect()
     {
         set_exception_handler(function ($e) {
