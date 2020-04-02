@@ -129,4 +129,17 @@ class Database
 
         return $this;
     }
+
+    public function search()
+    {
+        $search = 'ro'; // "%{$_POST['search']}%";
+        $stmt = $this->pdo->prepare("SELECT id, name, email FROM $this->table WHERE name LIKE ?");
+        $stmt->execute([$search]);
+        $arr = $stmt->fetchAll();
+        if (!$arr) return false;
+        var_export($arr);
+        $stmt = null;
+
+        return $this;
+    }
 }

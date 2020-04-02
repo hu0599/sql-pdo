@@ -25,4 +25,6 @@ if($db){
 
 // $db->fetchOneRow();
 
-$db->fetchKeyValuePair();
+// $db->fetchKeyValuePair();
+
+$db->search();
