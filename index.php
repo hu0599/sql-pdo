@@ -17,4 +17,6 @@ if($db){
 
 // $db->updateColumn();
 
-$db->lastInsertId();
+// $db->lastInsertId();
+
+$db->fetchAll();

@@ -79,4 +79,16 @@ class Database
 
         return $this;
     }
+
+    public function fetchAll()
+    {
+        $stmt = $this->pdo->prepare("SELECT * FROM $this->table WHERE id <= ?");
+        $stmt->execute([50]); // id
+        $arr = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        if (!$arr) return false;
+        var_export($arr);
+        $stmt = null;
+
+        return $this;
+    }
 }
